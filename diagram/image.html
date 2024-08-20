@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sơ đồ TDD với TCG</title>
+<style>
+    .container {
+        display: flex;
+        justify-content: space-around;
+    }
+    .box {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin: 10px;
+        text-align: center;
+        position: relative; /* Để định vị mũi tên */
+    }
+    .arrow {
+        position: absolute;
+        top: 100%; /* Xuất phát từ dưới hộp */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #ccc;
+    }
+    .yes-arrow {
+        top: 100%;
+        left: 70%; /* Bắt đầu từ bên phải hộp */
+    }
+    .no-arrow {
+        top: 100%;
+        left: 30%; /* Bắt đầu từ bên trái hộp */
+    }
+    .arrow-label {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 10px); /* Điều chỉnh vị trí chữ */
+        font-size: 12px;
+    }
+</style>
+</head>
+<body>
+    <h1>Sơ đồ TDD với TCG</h1>
+    <div class="container">
+        <div class="box">
+            <h2>Use Case Specifications</h2>
+            <p>1. Tập các đặc tả use case của hệ thống.</p>
+            <div class="arrow"></div>
+        </div>
+        <div class="box">
+            <h2>Select Use Case to Implement</h2>
+            <p>2. Lựa chọn một use case để triển khai.</p>
+            <div class="arrow"></div>
+        </div>
+        <div class="box">
+            <h2>Use TCG Tool to Generate Test Cases</h2>
+            <p>3. Sử dụng công cụ TCG để sinh ra các trường hợp kiểm thử.</p>
+            <div class="arrow"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <h2>Unit/Integration Test</h2>
+            <p>4. Thực hiện kiểm thử đơn vị hoặc kiểm thử tích hợp.</p>
+            <div class="arrow"></div>
+        </div>
+        <div class="box">
+            <h2>Run Test</h2>
+            <p>5. Chạy kiểm thử.</p>
+            <div class="arrow"></div>
+        </div>
+        <div class="box">
+            <h2>Test Passing?</h2>
+            <p>6. Kiểm tra xem các kiểm thử có pass không.</p>
+            <div class="arrow yes-arrow"></div>
+            <div class="arrow-label">Yes</div>
+            <div class="arrow no-arrow"></div>
+            <div class="arrow-label">No</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <h2>Refactor Code</h2>
+            <p>7. Tinh chỉnh lại mã nguồn cho tốt hơn.</p>
+            <div class="arrow"></div>
+        </div>
+        <div class="box">
+            <h2>Test Passing?</h2>
+            <p>8. Kiểm tra lại xem các kiểm thử có pass không sau khi refactor.</p>
+            <div class="arrow yes-arrow"></div>
+            <div class="arrow-label">Yes</div>
+            <div class="arrow no-arrow"></div>
+            <div class="arrow-label">No</div>
+        </div>
+        <div class="box">
+            <h2>Acceptance Test</h2>
+            <p>9. Thực hiện các kiểm thử chấp nhận.</p>
+            <div class="arrow"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <h2>Test Passing?</h2>
+            <p>10. Kiểm tra xem các kiểm thử chấp nhận có pass không.</p>
+            <div class="arrow yes-arrow"></div>
+            <div class="arrow-label">Yes</div>
+            <div class="arrow no-arrow"></div>
+            <div class="arrow-label">No</div>
+        </div>
+        <div class="box">
+            <h2>Feature Development Completed</h2>
+            <p>11. Hoàn thành việc phát triển tính năng.</p>
+        </div>
+    </div>
+</body>
+</html>

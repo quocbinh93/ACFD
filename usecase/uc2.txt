@@ -1,0 +1,73 @@
+Use Case 1: Online Purchase
+Name: Online Purchase
+Goal: Allow customers to purchase products on an e-commerce website.
+Actors: Customer, Website System
+Preconditions: Customer has a registered account, Product is available in stock.
+Postconditions: Order is created, Payment is processed.
+Invariants: Product information remains unchanged during the purchase process.
+Main Success Scenario:
+Customer selects product and adds it to the shopping cart.
+Customer proceeds to checkout.
+Customer enters shipping and payment information.
+System verifies payment and creates an order.
+System sends an order confirmation email to the customer.
+Extensions:
+3a. If payment information is invalid, prompt the customer to re-enter.
+4a. If the product is out of stock, notify the customer.
+Included Use Cases: Login, View product details, Manage shopping cart, Payment.
+
+
+Use Case 2: Flight Booking
+Name: Flight Booking
+Goal: Allow customers to book flights online.
+Actors: Customer, Booking System
+Preconditions: Customer has a registered account.
+Postconditions: Flight is booked, Payment is processed.
+Invariants: Ticket price remains unchanged during the booking process.
+Main Success Scenario:
+Customer searches for flights.
+Customer selects a flight and enters passenger information.
+Customer selects payment method and proceeds with payment.
+System confirms payment and books the flight.
+System sends an e-ticket to the customer via email.
+Extensions:
+3a. If the flight is unavailable, suggest alternative flights.
+4a. If payment fails, ask the customer to retry or choose a different payment method.
+Included Use Cases: Login, Search for flights, Select seat (optional), Payment.
+
+
+
+Use Case 3: System Login
+Name: System Login
+Goal: Allow users with accounts to access the system.
+Actors: User
+Preconditions: User has a registered account.
+Postconditions: User is redirected to the system's homepage.
+Invariants: Passwords are not stored in plain text.
+Main Success Scenario:
+User enters username and password.
+System authenticates login credentials.
+System grants access to the user.
+Extensions:
+2a. If login credentials are incorrect, prompt the user to re-enter.
+2b. If the user exceeds the allowed number of incorrect attempts, temporarily lock the account.
+Included Use Cases: User authentication (may include methods like password, OTP, fingerprint, etc.), Access granting.
+
+
+Use Case 4: Leave a Review
+Name: Leave a Review
+Goal: Allow customers to rate and review a purchased product.
+Actors: Customer, Website System
+Preconditions: Customer has purchased a product, Customer is logged in.
+Postconditions: Review is submitted and displayed on the product page.
+Invariants: Reviews cannot be edited after submission.
+Main Success Scenario:
+Customer navigates to the product page.
+Customer clicks on the "Write a Review" button.
+Customer enters a star rating and writes a review.
+Customer clicks on the "Submit" button.
+System verifies the review and publishes it on the product page.
+Extensions:
+3a. If the review contains inappropriate content, display an error message and prompt the customer to revise.
+5a. If there is a technical error, display an error message and ask the customer to try again later.
+Included Use Cases: Login, View product details.

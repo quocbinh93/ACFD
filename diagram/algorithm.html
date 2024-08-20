@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm Architecture Diagram</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({startOnLoad:true});
+    </script>
+</head>
+<body>
+    <div class="mermaid">
+        graph TD
+            subgraph Main
+                A[main] --> B[use_case_input]
+                A --> C[cfd_generation]
+                A --> D[test_case_generation]
+                A --> E[FPDF]
+            end
+            
+            subgraph ACFD Generation
+                C1[Extract Statements] --> C2[Analyze Statements]
+                C2 --> C3[Build Control Flow Graph]
+                C3 -->|Return CFG| A
+            end
+            
+            subgraph DFS Algorithm
+                C4[Generate Test Paths using DFS] -->|Return Test Paths| A
+            end
+            
+            subgraph GA Optimization
+                D1[Generate Initial Population]
+                D2[Evaluate Fitness]
+                D3[Selection, Crossover, Mutation]
+                D4[Optimization Loop]
+                D1 --> D2
+                D2 --> D3
+                D3 --> D4
+                D4 -->|Return Optimized Test Cases| A
+            end
+            
+            
+            A -->|Use Case Data| C1
+            A -->|CFG| C4
+            A -->|Test Paths| D1
+            A -->|Optimized Test Cases| E1
+    </div>
+</body>
+</html>

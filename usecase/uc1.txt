@@ -1,0 +1,28 @@
+Name: Withdraw Money
+Goal: Allow authorized user to withdraw a limited amount of money
+Actors: Bank customers (ATM Cardholders) and bank staff
+Preconditions: The bank customer has a valid ATM card; ATM has cash money
+Postconditions: Receipt printed
+Invariants: None
+Main Success Scenario: A bank customer inserts debt cards and enters a PIN 
+If the PIN is Valid Then 
+ATM displays available actions  
+the customer selects withdraw cash from available actions 
+ATM promotes Account 
+the customer selects an account  
+ATM promotes amount  
+the customer enters the desired amount 
+IF the customer has sufficient funds Then 
+IF the desired amount is within the allowable limit Then  
+IF the ATM has sufficient cash Then 
+money is dispensed  
+and receipt is printed
+Variations: None
+Extensions: 2a. Else ATM displays an error message 
+9a. ATM prints error message  
+9b. and asks the customer to re-enter the amount 
+10a. shows allowable limit  
+10b. asks the customer to re-enter the cash amount Else
+11a. Else ATM technician is alerted and  
+11b. ATM displays Error message Else ATM displays an error message
+Included Use Cases: Balance inquiry

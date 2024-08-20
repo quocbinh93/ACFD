@@ -1,0 +1,15 @@
+Name: Online Purchase
+Goal: Allow customers to purchase products on an e-commerce website.
+Actors: Customer, Website System
+Preconditions: Customer has a registered account, Product is available in stock.
+Postconditions: Order is created, Payment is processed.
+Invariants: Product information remains unchanged during the purchase process.
+Main Success Scenario: Customer selects product and adds it to the shopping cart.
+Customer proceeds to checkout.
+Customer enters shipping and payment information.
+System verifies payment and creates an order.
+System sends an order confirmation email to the customer.
+Variations: 
+Extensions: 3a. If payment information is invalid, prompt the customer to re-enter.
+4a. If the product is out of stock, notify the customer.
+Included Use Cases: Login, View product details, Manage shopping cart, Payment.

@@ -1,0 +1,66 @@
+// Control Flow Diagram - Test Case 3
+digraph {
+	rankdir=TB
+	Root [label="Root
+(start)
+Root Node" color=lightblue2 style=filled]
+	N1 [label="N1
+(process)
+Customer selects product and adds it to the shopping cart." color=lightblue2 style=filled]
+	N2 [label="N2
+(process)
+Customer proceeds to checkout." color=lightblue2 style=filled]
+	N3 [label="N3
+(input)
+Customer enters shipping and payment information." color=lightblue2 style=filled]
+	N4 [label="N4
+(condition)
+System verifies payment and creates an order." color=lightblue2 style=filled]
+	N5 [label="N5
+(process)
+Customer selects product and adds it to the shopping cart." color=lightblue2 style=filled]
+	N6 [label="N6
+(process)
+Customer proceeds to checkout."]
+	N7 [label="N7
+(process)
+System sends an order confirmation email to the customer." color=lightblue2 style=filled]
+	N8 [label="N8
+(condition)
+3a. If payment information is invalid, prompt the customer to re-enter." color=lightblue2 style=filled]
+	N9 [label="N9
+(process)
+Customer selects product and adds it to the shopping cart."]
+	N10 [label="N10
+(process)
+Customer proceeds to checkout." color=lightblue2 style=filled]
+	N11 [label="N11
+(condition)
+4a. If the product is out of stock, notify the customer."]
+	N12 [label="N12
+(process)
+Customer selects product and adds it to the shopping cart."]
+	N13 [label="N13
+(process)
+Customer proceeds to checkout."]
+	End [label="End
+(end)
+End Node" color=lightblue2 style=filled]
+	Root -> N1
+	N1 -> N2
+	N2 -> N3
+	N3 -> N4
+	N4 -> N5
+	N4 -> N6
+	N5 -> N7
+	N6 -> End
+	N7 -> N8
+	N8 -> N9
+	N8 -> N10
+	N9 -> N11
+	N10 -> End
+	N11 -> N12
+	N11 -> N13
+	N12 -> End
+	N13 -> End
+}

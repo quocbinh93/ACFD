@@ -1,0 +1,36 @@
+// Control Flow Diagram
+digraph {
+	rankdir=TB
+	Root [label="Root
+(start)
+Root Node"]
+	N1 [label="N1
+(process)
+Customer selects product and adds it to the shopping cart."]
+	N2 [label="N2
+(process)
+Customer proceeds to checkout."]
+	N3 [label="N3
+(input)
+Customer enters shipping and payment information."]
+	N4 [label="N4
+(condition)
+System verifies payment and creates an order."]
+	N7 [label="N7
+(process)
+System sends an order confirmation email to the customer."]
+	N8 [label="N8
+(condition)
+3a. If payment information is invalid, prompt the customer to re-enter."]
+	N11 [label="N11
+(condition)
+4a. If the product is out of stock, notify the customer."]
+	End [label="End
+(end)
+End Node"]
+	Root -> N1
+	N1 -> N2
+	N2 -> N3
+	N3 -> N4
+	N7 -> N8
+}
